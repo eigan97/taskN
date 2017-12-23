@@ -49,10 +49,10 @@ function validarSesion(){
 		if (ajaxVal.readyState==4 && ajaxVal.status==200){
 			var resp = JSON.parse(ajaxVal.responseText);
 			// alert(resp);
-			/*if (resp != 0) {
+			if (resp != 0) {
 				window.location.href = '../task/login.html';
 				return false;
-			}*/
+			}
 		}
 	}
 }
