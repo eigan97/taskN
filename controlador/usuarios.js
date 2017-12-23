@@ -50,7 +50,7 @@ function validarSesion(){
 			var resp = JSON.parse(ajaxVal.responseText);
 			// alert(resp);
 			if (resp != 0) {
-				window.location.href = '../login.html';
+				location.assign('login.html');
 				return false;
 			}
 		}
