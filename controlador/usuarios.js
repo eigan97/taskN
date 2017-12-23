@@ -50,7 +50,7 @@ function validarSesion(){
 			var resp = JSON.parse(ajaxVal.responseText);
 			// alert(resp);
 			if (resp != 0) {
-				window.location.href = '../task/login.html';
+				window.location.href = '../taskN/login.html';
 				return false;
 			}
 		}
