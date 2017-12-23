@@ -52,6 +52,8 @@
            <icon density="xhdpi" src="ico.png" />
            <icon density="xxhdpi" src="ico.png" />
            <icon density="xxxhdpi" src="ico.png" />
+            -->   
+           
            <splash density="land-ldpi" src="ico.png" />
            <splash density="land-mdpi" src="ico.png" />
            <splash density="land-hdpi" src="ico.png" />
@@ -64,7 +66,6 @@
            <splash density="port-xhdpi" src="ico.png" />
            <splash density="port-xxhdpi" src="ico.png" />
            <splash density="port-xxxhdpi" src="ico.png" />
-            -->   
      </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
