@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Task</name>
+    <name>Sor</name>
     <description>
-        Task
+        Aplicacion de nuestro taller
     </description>
     <author email="eigan@gmail.com" href="http://phonegap.com">
-        
+        Taller team
     </author>
     
     <preference name="DisallowOverscroll" value="true" />
