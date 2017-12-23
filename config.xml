@@ -43,28 +43,29 @@
     <preference name="Orientation" value="portrait" />
     <platform name="android">
         <preference name="Orientation" value="sensorPortrait" />
-        <feature name="Camera">
-            <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-        </feature>
-        <icon density="ldpi" src="ico.png" />
-        <icon density="mdpi" src="ico.png" />
-        <icon density="hdpi" src="ico.png" />
-        <icon density="xhdpi" src="ico.png" />
-        <icon density="xxhdpi" src="ico.png" />
-        <icon density="xxxhdpi" src="ico.png" />
-        <splash density="land-ldpi" src="ico.png" />
-        <splash density="land-mdpi" src="ico.png" />
-        <splash density="land-hdpi" src="ico.png" />
-        <splash density="land-xhdpi" src="ico.png" />
-        <splash density="land-xxhdpi" src="ico.png" />
-        <splash density="land-xxxhdpi" src="ico.png" />
-        <splash density="port-ldpi" src="ico.png" />
-        <splash density="port-mdpi" src="ico.png" />
-        <splash density="port-hdpi" src="ico.png" />
-        <splash density="port-xhdpi" src="ico.png" />
-        <splash density="port-xxhdpi" src="ico.png" />
-        <splash density="port-xxxhdpi" src="ico.png" />
-    </platform>
+       <!--  <feature name="Camera">
+               <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+           </feature>
+           <icon density="ldpi" src="ico.png" />
+           <icon density="mdpi" src="ico.png" />
+           <icon density="hdpi" src="ico.png" />
+           <icon density="xhdpi" src="ico.png" />
+           <icon density="xxhdpi" src="ico.png" />
+           <icon density="xxxhdpi" src="ico.png" />
+           <splash density="land-ldpi" src="ico.png" />
+           <splash density="land-mdpi" src="ico.png" />
+           <splash density="land-hdpi" src="ico.png" />
+           <splash density="land-xhdpi" src="ico.png" />
+           <splash density="land-xxhdpi" src="ico.png" />
+           <splash density="land-xxxhdpi" src="ico.png" />
+           <splash density="port-ldpi" src="ico.png" />
+           <splash density="port-mdpi" src="ico.png" />
+           <splash density="port-hdpi" src="ico.png" />
+           <splash density="port-xhdpi" src="ico.png" />
+           <splash density="port-xxhdpi" src="ico.png" />
+           <splash density="port-xxxhdpi" src="ico.png" />
+            -->   
+     </platform>
     <platform name="ios">
         <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
