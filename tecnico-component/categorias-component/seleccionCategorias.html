@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../../css/styleUpload.css">
+	<script type="text/javascript" src="../../controlador/tecnicos.js"></script>
+</head>
+<body onload="validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('../../index.html')"><img src="../../assets/ico/left-arrow-key_blue.png" style="width:20px";"></span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="detalle-tarea-total center-row-na">
+			<div class="add-tarea-general center-row">
+				<div class="cabecera-title">
+					<div class="icon">
+						
+					</div>
+					<p style="font-size: 1.2em;
+    margin-bottom: 10px;">Elige una o mas categorias</p>
+				</div>
+				<div class="categorias-overall center-row-ar">
+					<div class="button-inicial categorias-button center-row bo" id="Albañileria" onclick="subrayar(this)">
+						<p>Albañileria</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Costureria" onclick="subrayar(this)">
+						<p>Costureria</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Carpinteria" onclick="subrayar(this)">
+						<p>Carpinteria</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Electricidad" onclick="subrayar(this)">
+						<p>Electricidad</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Herreria" onclick="subrayar(this)">
+						<p>Herreria</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Mecanica" onclick="subrayar(this)">
+						<p>Mecanica</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Pintura" onclick="subrayar(this)">
+						<p>Pintura</p>
+					</div>
+					<div class="button-inicial categorias-button center-row bo" id="Plomeria" onclick="subrayar(this)">
+						<p>Plomeria</p>
+					</div>
+
+				</div>
+				<div class="both-buttons add-tarea-buttons">
+			<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="agregarCatTec();cambio('../mainTecnico.html')">
+			<button class="upload-image-button cancelar-edit" onclick="cambio('../../index.html')">Cancelar</button>
+		</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+</body>
+<script>
+	var actividades=[];
+	var actividadesN=[];
+			var estado=0;
+	function subrayar(algo){
+
+		if(algo.classList[3]=='sub'){
+			actividadesN.push(algo.id)
+			
+			estado=1
+			sessionStorage.setItem(algo.id, 0)
+		}else{
+			actividades.push(algo.id)
+			
+			estado=0
+			sessionStorage.setItem(algo.id, 1)
+		}
+		if(estado==0){
+
+		objeto=document.getElementById(algo.id)
+		objeto.classList.add('sub')
+		estado=1;
+	}else{
+		objeto=document.getElementById(algo.id)
+		objeto.classList.remove('sub')
+		estado=0;
+	}
+	for (var i = 0 ; i <= actividades.length-1; i++) {
+		for (var x = 0 ; x <= actividadesN.length-1; x++) {
+			if(actividades[i]==actividadesN[x]){
+				
+				quitado=actividades.splice(i,1);
+				console.log(quitado);
+				
+
+			}
+		}
+		
+	}
+	/*actividades es un arreglo que tiene todas las actividades seleccionadas por el usuario*/
+	console.log(actividades);
+	
+	}
+</script>
+</html>

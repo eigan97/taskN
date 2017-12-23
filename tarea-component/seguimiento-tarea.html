@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+	<script type="text/javascript" src="../controlador/servicios.js"></script>
+	<script type="text/javascript" src="../controlador/chat.js"></script>
+</head>
+<body onload="datos1(), validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('../chat-component/chat-solicitante.html')"><</span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="detalle-tarea-total center-row-na">
+			<div class="center-row">
+				<div class="cabecera-title">
+					<div class="icon">
+						
+					</div>
+					<p>Acordaron el 08/11/17 a las 12:30</p>
+				</div>
+				<div class="seguimiento-perfil center-column" id="datosTec">
+					
+				</div>
+				<div class="seguimiento-buttons">
+					<div class="seguimiento-confirmacion center-row">
+						<p>¿Ya llego el tecnico a tu domicilio?</p>
+						<p>Si es asi, confirma su asistencia.</p>
+						<input type="submit" class="button-inicial button-seguimiento" value="Confirmar" 
+								onclick="cambio('seguimiento-tareaNegociacion.html')">
+					</div>
+					<div class="seguimiento-confirmacion center-row">
+						<p>Aun no llega el tecnico</p>
+						<input type="submit" class="upload-image-button button-seguimiento" value="Reasignar"
+								onclick="reasignar(), cambio('../index.html')">
+					</div>
+				</div>
+				<p style="color: #525252;">Esta opcion NO tiene costo</p>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+</body>
+</html>

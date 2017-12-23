@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+	<script type="text/javascript" src="../controlador/servicios.js"></script>
+	<script type="text/javascript" src="../controlador/tecnicos.js"></script>
+	<script type="text/javascript" src="../controlador/chat.js"></script>
+</head>
+<body class="body-chat" onload="cargarDatosChat(), cargarChat(), validarSesion()">
+<div class="contenedor center-column-nj">
+	<div class="top chat-top center-row-start">
+		<p><span class="regreso no-right" onclick="cambio('../tarea-component/detalleTarea.html')"><</span></p>
+		<div class="tecnico-chat-info center-row-ar" id="datosChat">
+			
+		</div>
+		<div class="button-asignacion center-column" onclick="agregarServicio(), cambio('../tarea-component/seguimiento-tarea.html')">
+			<div class="circulo-asignar"></div>
+			<p>Asignar</p>
+		</div>
+	</div>
+	<div class="contain-chat center-column-bw">
+		<div class="conversacion-total center-row-bw" id="bandeja">
+			
+
+		</div>
+	</div>
+	<div class="input-chat center-row">
+		<textarea id="mensaje"></textarea>
+		<button class="chat-envio" onclick="enviarMSJ()">></button>
+	</div>
+</div>
+
+
+	
+</body>
+</html>

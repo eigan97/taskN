@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="contenedor center-row">
+	<div class="titulo center-column">
+		<h1>Task</h1>
+		<p>Registrate y descubre un mundo de soluciones.</p>
+	</div>
+	<div id="form-registro" class="formulario center-column ">	
+		<div class="input-especial-div center-row-bw">
+			<input class="input-inicio input-especial" type="text" placeholder="Nombre" id="nombre">
+			<input class="input-inicio input-especial" type="text" placeholder="Apellido" id="apellidos">
+		</div>	
+			<input class="input-inicio" type="email" placeholder="Correo Electronico" id="correo">
+			<input class="input-inicio" type="number" placeholder="Telefono" id="telefono">
+			<input class="input-inicio" type="password" placeholder="Contraseña" id="contrasena">
+			<input class="input-inicio" type="password" placeholder="Confirmar contraseña" id="recontrasena">
+			<input class="button-inicial" type="submit" value="Registrarse" onclick="registrar()">
+	</div>
+	<footer class="registro-cuenta center-column">
+		<p>Ya tengo una cuenta. <span onclick="cambio('index.html')">Iniciar Sesion.</span></p>
+	</footer>
+</div>
+
+	
+</body>
+<script type="text/javascript" src="controlador/usuarios.js"></script>
+<script>
+	
+</script>
+</html>

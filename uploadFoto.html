@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="css/styleUpload.css">
+</head>
+<body>
+<div class="contenedor center-column-bw">
+	<div class="top center-row-start">
+		<p>Elige una imagen</p>
+	</div>
+	<div class="seccion-perfil center-column">
+	
+		<div class="foto">
+			<label for="hello">
+				<div class="content">
+				</div>
+				</label>
+	  		
+		</div>
+		<input type="file" name="hello" id="hello" style="display: none">
+		<p class="profile-name">Mi Perfil</p>
+	</div>
+	<div class="upload-image center-row">
+		<div class="upload-first">
+			<p>Imagen</p>
+			<label for="hello">
+				<button class="upload-image-button"><label for="hello">Agregar Imagen</label></button>
+			</label>
+		</div>
+		<p id="mensaje-foto">No se ha adjuntado una imagen.</p>
+	</div>
+	<footer class="confirmacion center-row">
+		<input type="submit" class="button-inicial button-foto" value="Confirmar" onclick="registrarFoto()">
+	</footer>
+</div>
+	
+</body>
+<script type="text/javascript" src="controlador/usuarios.js"></script>
+</html>

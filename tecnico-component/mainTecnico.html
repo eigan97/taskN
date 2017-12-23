@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="js/swiper/dist/css/swiper.min.css">
+    <script  src="js/swiper/dist/js/swiper.min.js"></script>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<link rel="stylesheet" href="../css/styleSwiper.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/tecnicos.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+	<script type="text/javascript" src="../controlador/servicios.js"></script>
+	<script type="text/javascript" src="../controlador/chat.js"></script>
+</head>
+<body onload="verDatosIndex(), misServicios(), tareasDisponibles(), validarSesion()">
+<div class="contenedor center-column-bw">
+	<div class="top center-row">
+        <div class="swiper-pagination pagination-main"></div>
+		<div class="options-principal-tecnico"><img src="../assets/ico/round-account-button-with-user-inside_blue.png"></div>
+		<div class="options-principal-tecnico"><img src="../assets/ico/chat-bubbles_blue.png"></div>
+		<div class="options-principal-tecnico"><img src="../assets/ico/briefcase-with-tick-inside_blue.png"></div>
+		<div class="options-principal-tecnico"><img src="../assets/ico/work-briefcase_blue.png"></div>
+		<div class="options-principal-tecnico"><img src="../assets/ico/turn-notifications-on-button_blue.png"></div>
+	</div>
+	
+	<div class="contain swiper-container">
+		<div class="swiper-wrapper">
+			<div class="perfil swiper-slide">
+					<div class="perfil-top ">
+						<div class="info-usuario center-column">
+							<div class="foto-usuario">
+							
+							</div>
+						<div class="name-usuario" id="nombreP">
+						</div>
+						<div class="estado-usuario">
+							<p>Tecnico</p>
+						</div>
+						
+					</div>
+					<div class="change-estado center-row-end" onclick="cambio('../index.html')">
+						<img src="../assets/ico/refresh-user-sign_black.png" style="width: 50px;">
+						</div>
+					
+					</div>
+					<div class="menu-perfil">
+						<div class="option-menu-perfil">
+							<p>Mi perfil</p>
+						</div>
+						<div class="option-menu-perfil" onclick="cambio('../edit-component/editarInformacion.html')">
+							<p>Editar informacion</p>
+						</div>
+						<div class="option-menu-perfil">
+							<p>Historico</p>
+						</div>
+						<div class="option-menu-perfil" onclick="cambio('../metodo-component/metodosPago.html')">
+							<p>Metodo de pago</p>
+						</div>
+						<div class="option-menu-perfil">
+							<p>Acerca de</p>
+						</div>
+						<div class="option-menu-perfil" onclick="logout()">
+							<p>Salir</p>
+						</div>
+					</div>
+			</div>
+			<div class="chat swiper-slide">
+					<div class="title-option">
+						<p id="principal-title">Conversaciones</p>
+					</div>
+					<div class="mensaje mensaje-asignado center-row" id="contConA">
+										
+					</div>
+					
+					<div id="contCon">
+
+					</div>
+			</div>
+			<div class="tareas center-column-nj swiper-slide" >
+				<div class="title-option">
+					<p id="principal-title">Mis Tareas</p>
+				</div>
+				
+				<div class="tarjeta-tarea" id="miTarea">
+					
+				</div>
+				
+			</div>
+			<div class="search-tareas center-column-nj swiper-slide">
+				<div class="title-option">
+					<p id="principal-title">Tareas disponibles</p>
+				</div>
+				<div class="buscador center-row">
+
+					<input type="search" placeholder="Buscar(plabra clave)" class="input-edicion" id="busqueda">
+					<div class="campo-edit">
+						<p class="info-edit-title"> Colonia</p>
+						<select class="input-edicion-white" id="colonia">
+							<option value="Arboledas">Arboledas</option>
+							<option value="Benito Juárez">Benito Juárez</option>
+							<option value="Casa Blanca">Casa Blanca</option>
+							<option value="Cimatario">Cimatario</option>
+							<option value="Desarrollo San Pablo">Desarrollo San Pablo</option>
+							<option value="Felipe Ángeles">Felipe Ángeles</option>
+							<option value="Ignacio Zaragoza">Ignacio Zaragoza</option>
+							<option value="Jurica">Jurica</option>
+							<option value="Las Torres">Las Torres</option>
+						</select>
+					</div>
+				</div>
+				<div id="tareasDisponibles" style="width: 90%;">
+					</div>
+				<div class="resultados-search center-row">
+
+						<div class="tarjeta-historico">
+								<div class="tarjeta-top">
+									<div class="info-main center-row-bw">
+										<div class="title-historico">
+											<p>Tuberia rota del fregadero</p>
+										</div>
+										
+									</div>
+									<div class="description-historico">
+										
+											<p>El lavabo gotea a pesar de cerrar las llaves de paso. Acabo de identificar esa fuga de agughajskdjaslkdjaskldjas lk das djalksdjal ksdjaskldjalskdasjdlka sjdlksaaslkdjaslkjdsa lkdja slkdjaskldjalksdjaslkdjlaksdjalskdjlaksdjalskdjaslkdjalksdjaslkdjasda...</p>
+										
+									</div>
+									<div class="info-historico center-row-ar">
+											<div class="boton-informacion urgente-boton-info search-boton-info">
+												<p>Urgente</p>
+											</div>
+											<div class="boton-informacion estado search-boton-info">
+												<p>Completada</p>
+											</div>
+										</div>
+								</div>
+								
+						</div>
+						<div class="tarjeta-historico">
+								<div class="tarjeta-top">
+									<div class="info-main center-row-bw">
+										<div class="title-historico">
+											<p>Tuberia rota del fregadero</p>
+										</div>
+										
+									</div>
+									<div class="description-historico">
+										
+											<p>El lavabo gotea a pesar de cerrar las llaves de paso. Acabo de identificar esa fuga de agughajskdjaslkdjaskldjas lk das djalksdjal ksdjaskldjalskdasjdlka sjdlksaaslkdjaslkjdsa lkdja slkdjaskldjalksdjaslkdjlaksdjalskdjlaksdjalskdjaslkdjalksdjaslkdjasda...</p>
+										
+									</div>
+									<div class="info-historico center-row-ar">
+											<div class="boton-informacion urgente-boton-info search-boton-info">
+												<p>Urgente</p>
+											</div>
+											<div class="boton-informacion estado search-boton-info">
+												<p>Completada</p>
+											</div>
+										</div>
+								</div>
+								
+						</div>
+						<div class="tarjeta-historico">
+								<div class="tarjeta-top">
+									<div class="info-main center-row-bw">
+										<div class="title-historico">
+											<p>Tuberia rota del fregadero</p>
+										</div>
+										
+									</div>
+									<div class="description-historico">
+										
+											<p>El lavabo gotea a pesar de cerrar las llaves de paso. Acabo de identificar esa fuga de agughajskdjaslkdjaskldjas lk das djalksdjal ksdjaskldjalskdasjdlka sjdlksaaslkdjaslkjdsa lkdja slkdjaskldjalksdjaslkdjlaksdjalskdjlaksdjalskdjaslkdjalksdjaslkdjasda...</p>
+										
+									</div>
+									<div class="info-historico center-row-ar">
+											<div class="boton-informacion urgente-boton-info search-boton-info">
+												<p>Urgente</p>
+											</div>
+											<div class="boton-informacion estado search-boton-info">
+												<p>Completada</p>
+											</div>
+										</div>
+								</div>
+								
+						</div>
+						<div class="tarjeta-historico">
+								<div class="tarjeta-top">
+									<div class="info-main center-row-bw">
+										<div class="title-historico">
+											<p>Tuberia rota del fregadero</p>
+										</div>
+										
+									</div>
+									<div class="description-historico">
+										
+											<p>El lavabo gotea a pesar de cerrar las llaves de paso. Acabo de identificar esa fuga de agughajskdjaslkdjaskldjas lk das djalksdjal ksdjaskldjalskdasjdlka sjdlksaaslkdjaslkjdsa lkdja slkdjaskldjalksdjaslkdjlaksdjalskdjlaksdjalskdjaslkdjalksdjaslkdjasda...</p>
+										
+									</div>
+									<div class="info-historico center-row-ar">
+											<div class="boton-informacion urgente-boton-info search-boton-info">
+												<p>Urgente</p>
+											</div>
+											<div class="boton-informacion estado search-boton-info">
+												<p>Completada</p>
+											</div>
+										</div>
+								</div>
+								
+						</div>
+				</div>
+			</div>
+			
+			<div class="notificaciones swiper-slide" >
+				<div class="title-option">
+					<p id="principal-title">Mis Tareas</p>
+				</div>
+				<div class="mensaje scenter-row">
+					<div class="info-noti-total center-row-bw">
+						<div class="foto-tecnico-chat">
+							
+						</div>
+						<div class="info-notificacion">
+							<p>Jose Ramirez ha <span class="resaltar">solicitado</span> tu tarea <span class="resaltar">Tuberia rota</span></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	
+</body>
+<script>
+	   var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 30,
+    });
+</script>
+</html>

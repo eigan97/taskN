@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+</head>
+<body onload="verTarea(), validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('../index.html')"><img src="../assets/ico/left-arrow-key_blue.png" style="width:20px";"></span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="edit-general center-row">
+			<div class="add-tarea-general center-row" id="conTare">
+
+				
+					
+			</div>
+			<br>
+
+			<div class="both-buttons add-tarea-buttons">
+			<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="editarSolicitud()">
+			<button class="upload-image-button cancelar-edit" onclick="cambio('../index.html')">Cancelar</button>
+		</div>
+		</div>
+		
+</div>
+</div>
+	
+</body>
+<script>
+gratis=document.getElementById("gratis-id-selction")
+premieum=document.getElementById("premium-id-selction")
+urgente=document.getElementById("urgente-id-selction")
+tiempo=document.getElementById("tiempo-id-selction")
+var estado=0;
+	function subrayar(algo){
+			
+		if(algo.classList[3]=='sub'){
+			
+			estado=1
+		}else{
+			
+			
+			estado=0
+		}
+	if(estado==0){
+		objeto=document.getElementById(algo.id)
+		objeto.classList.add('sub')
+		estado=1;
+		if (algo.id=="gratis-id-selction" || algo.id=="premium-id-selction") {
+		
+				if (algo.id=="gratis-id-selction") {
+					premieum.classList.remove('sub')
+					localStorage.setItem('estado',0)
+				}else{
+						gratis.classList.remove('sub')
+						localStorage.setItem('estado',1)
+				}
+				if (algo.id=="premium-id-selction") {
+					gratis.classList.remove('sub')
+					localStorage.setItem('estado',1)
+				}else{
+						premieum.classList.remove('sub')
+						localStorage.setItem('estado',0)
+				}
+
+		}
+
+
+	if (algo.id=="urgente-id-selction" || algo.id=="tiempo-id-selction") {
+				if (algo.id=="urgente-id-selction") {
+					tiempo.classList.remove('sub')
+					localStorage.setItem('necesidad',1)
+				}else{
+						urgente.classList.remove('sub')
+				}
+				if (algo.id=="tiempo-id-selction") {
+					urgente.classList.remove('sub')
+					localStorage.setItem('necesidad',0)
+				}else{
+						tiempo.classList.remove('sub')
+				}
+	}}else{
+		objeto=document.getElementById(algo.id)
+		objeto.classList.remove('sub')
+		estado=0;
+	}
+	
+}
+</script>
+</html>

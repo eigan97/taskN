@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+</head>
+<body onload="validarSesion()"> 
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('metodosPago.html')"><img src="../assets/ico/left-arrow-key_blue.png" style="width:20px";"></span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="edit-general center-row">
+			<div class="campo-edit campo-edit-especial">
+				<p class="info-edit-title"> Titular de la tarjeta</p>
+				<input type="text" placeholder="" class="input-edicion" id="titular">
+			</div>
+			<div class="campo-edit">
+				<p class="info-edit-title"> Numero de tarjeta</p>
+				<input type="text" placeholder="" class="input-edicion" id="numTarjeta" maxlength="16">
+			</div>
+			<div class="campo-edit">
+				<p class="info-edit-title"> Vencimiento</p>
+				<input type="Month" class="input-edicion-white" id="fechaExpiracion">
+
+			</div>
+			<div class="campo-edit">
+				<p class="info-edit-title"> Codigo</p>
+				<input type="text" placeholder="CVV" class="input-edicion" id="claveS" maxlength="3">
+			</div>
+
+		</div>
+		<div class="both-buttons">
+			<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="agregarTarjeta()">
+			<button class="upload-image-button cancelar-edit" onclick="cambio('metodosPago.html')">Cancelar</button>
+		</div>
+</div>
+</div>
+	
+</body>
+</html>

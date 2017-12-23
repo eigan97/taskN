@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../../css/styleUpload.css">
+	<script type="text/javascript" src="../../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../../controlador/tecnicos.js"></script>
+	<script type="text/javascript" src="../../controlador/solicitudes.js"></script>
+	<script type="text/javascript" src="../../controlador/servicios.js"></script>
+</head>
+<body onload="verDetalle2(), validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('../mainTecnico.html')"><</span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="detalle-tarea-total center-row-na">
+			<div class="add-tarea-general center-row">
+				<div class="cabecera-title">
+					<div class="icon">
+						
+					</div>
+					<p>Publicada el 08/11/17</p>
+				</div>
+				<div class="detalle-tarea-general">
+					<div id="conDeta">
+					</div>
+
+					<div class="campo-edit campo-edit-especial">
+					<p class="info-edit-title"> Estimado</p>
+					<input type="number" placeholder="Ej.$500" class="input-edicion" id="estimado">
+				</div>
+					<div class="both-buttons add-tarea-buttons center-row buttons-detalle-tecnico">
+						<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="crearNotificacion()">
+						<button class="upload-image-button cancelar-edit" onclick="cambio('../mainTecnico.html')">Cancelar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</div>
+
+</body>
+</html>

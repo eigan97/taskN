@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+</head>
+<body onload="validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('../index.html')"><img src="../assets/ico/left-arrow-key_blue.png" style="width:20px";"></span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="edit-general center-row">
+			<div class="add-tarea-general center-row">
+
+				<div class="campo-edit campo-edit-especial">
+					<p class="info-edit-title"> Titulo</p>
+					<input type="text" placeholder="Ej. Tuberia rota del lavabo" class="input-edicion" id="titulo">
+				</div>
+				<div class="tarjeta-end center-row-start">
+					<p class="info-edit-title"> Tipo de publicacion</p>
+					<div class="buttons-add-tarea center-row-ar">
+						<div class="button-inicial tarea-add center-row" id="gratis-id-selction" onclick="subrayar(this)">
+							<p>Gratis</p>
+						</div>
+						<div class="button-inicial tarea-add center-row"  id="premium-id-selction" onclick="subrayar(this)">
+							<p>Premium</p>
+						</div>
+					</div>
+				</div>
+				<div class="tarjeta-end center-row-start">
+					<p class="info-edit-title"> Necesidad</p>
+					<div class="buttons-add-tarea center-row-ar">
+						<div class="button-inicial tarea-add center-row"  id="urgente-id-selction" onclick="subrayar(this)">
+							<p>Urgente</p>
+						</div>
+						<div class="button-inicial tarea-add center-row" id="tiempo-id-selction" onclick="subrayar(this)">
+							<p>A tiempo</p>
+						</div>
+					</div>
+				</div>
+				<div class="campo-edit">
+					<p class="info-edit-title"> Categoria</p>
+					<select class="input-edicion-white" id="categoria">
+						<option value="Albañileria">Albañileria</option>
+						<option value="Costureria">Costureria</option>
+						<option value="Carpinteria">Carpinteria</option>
+						<option value="Elictricidad">Elictricidad</option>
+						<option value="Herreria">Herreria</option>
+						<option value="Jardineria">Jardineria</option>
+						<option value="Mecanica">Mecanica</option>
+						<option value="Pintura">Pintura</option>
+						<option value="Plomeria">Plomeria</option>
+					</select>
+				</div>
+				<div class="campo-edit">
+					<p class="info-edit-title"> Colonia</p>
+					<select class="input-edicion-white" id="colonia">
+						<option value="Arboledas">Arboledas</option>
+						<option value="Benito Juárez">Benito Juárez</option>
+						<option value="Casa Blanca">Casa Blanca</option>
+						<option value="Cimatario">Cimatario</option>
+						<option value="Desarrollo San Pablo">Desarrollo San Pablo</option>
+						<option value="Felipe Ángeles">Felipe Ángeles</option>
+						<option value="Ignacio Zaragoza">Ignacio Zaragoza</option>
+						<option value="Jurica">Jurica</option>
+						<option value="Las Torres">Las Torres</option>
+					</select>
+				</div>
+					<div class="campo-edit">
+					<div class="title-description-textarea center-row-bw">
+						<p class="info-edit-title"> Descripcion</p>
+						<p>0/260</p>
+					</div>
+					<textarea class="textarea-edicion" placeholder="Recuerda, se concreto y detalla bien tu tarea para que el tecnico te brinde un mejor servicio." id="descripcion"></textarea>
+				</div>
+				<div class="upload-image center-row">
+					<div class="upload-first">
+						<p>Imagen</p>
+						<button class="upload-image-button"><label for="hello">Agregar Imagen</label></button>
+						<input type="file"  id="hello" style="display: none;">
+					</div>
+					<p id="mensaje-foto">No se ha adjuntado una imagen.</p>
+				</div>
+					
+			</div>
+			<br>
+
+			<div class="both-buttons add-tarea-buttons">
+			<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="crearSolicitud()">
+			<button class="upload-image-button cancelar-edit" onclick="cambio('../index.html')">Cancelar</button>
+		</div>
+		</div>
+		
+</div>
+</div>
+	
+</body>
+<script>
+gratis=document.getElementById("gratis-id-selction")
+premieum=document.getElementById("premium-id-selction")
+urgente=document.getElementById("urgente-id-selction")
+tiempo=document.getElementById("tiempo-id-selction")
+var estado=0;
+	function subrayar(algo){
+			
+		if(algo.classList[3]=='sub'){
+			
+			estado=1
+		}else{
+			
+			
+			estado=0
+		}
+	if(estado==0){
+		objeto=document.getElementById(algo.id)
+		objeto.classList.add('sub')
+		estado=1;
+		if (algo.id=="gratis-id-selction" || algo.id=="premium-id-selction") {
+		
+				if (algo.id=="gratis-id-selction") {
+					premieum.classList.remove('sub')
+					localStorage.setItem('estado',0)
+				}else{
+						gratis.classList.remove('sub')
+						localStorage.setItem('estado',1)
+				}
+				if (algo.id=="premium-id-selction") {
+					gratis.classList.remove('sub')
+					localStorage.setItem('estado',1)
+				}else{
+						premieum.classList.remove('sub')
+						localStorage.setItem('estado',0)
+				}
+
+		}
+
+
+	if (algo.id=="urgente-id-selction" || algo.id=="tiempo-id-selction") {
+				if (algo.id=="urgente-id-selction") {
+					tiempo.classList.remove('sub')
+					localStorage.setItem('necesidad',1)
+				}else{
+						urgente.classList.remove('sub')
+				}
+				if (algo.id=="tiempo-id-selction") {
+					urgente.classList.remove('sub')
+					localStorage.setItem('necesidad',0)
+				}else{
+						tiempo.classList.remove('sub')
+				}
+	}}else{
+		objeto=document.getElementById(algo.id)
+		objeto.classList.remove('sub')
+		estado=0;
+	}
+	
+}
+</script>
+</html>

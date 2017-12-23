@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+	<script type="text/javascript" src="../controlador/solicitudes.js"></script>
+	<script type="text/javascript" src="../controlador/servicios.js"></script>
+	<script type="text/javascript" src="../controlador/tecnicos.js"></script>
+	<script type="text/javascript" src="../controlador/chat.js"></script>
+</head>
+<body class="body-chat" onload="cargarDatosChatTec(), cargarChatTec(), validarSesion()">
+<div class="contenedor center-column-nj">
+	<div class="top chat-top center-row-start">
+		<p><span class="regreso no-right" onclick="cambio('../tecnico-component/mainTecnico.html')"><</span></p>
+		<div class="tecnico-chat-info center-row-ar" id="datosChatT">
+			
+		</div>
+	</div>
+	<div class="contain-chat center-column-bw">
+		<div class="conversacion-total center-row-bw" id="bandeja">
+			
+
+		</div>
+	</div>
+	<div class="input-chat center-row">
+		<textarea id="mensaje"></textarea>
+		<button class="chat-envio" onclick="enviarMSJTec()">></button>
+	</div>
+</div>
+
+
+	
+</body>
+</html>

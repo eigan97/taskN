@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<title>Task</title>
+	<link rel="stylesheet" href="../css/styleUpload.css">
+	<script type="text/javascript" src="../controlador/usuarios.js"></script>
+</head>
+<body onload="verDatosTelefono(), validarSesion()">
+<div class="contenedor center-column-bw ">
+	<div class="top center-row-start">
+		<p><span class="regreso" onclick="cambio('editarInformacion.html')"><</span>Elige una imagen</p>
+
+	</div>
+	
+	<div class="contain center-column-bw">
+		<div class="edit-general center-row">
+			<div class="campo-edit" id="info">
+				
+			</div>
+			<div class="mensaje-edit-general">
+				<p><b>Recuerda:</b>Coloca tu numero de telefono personal permitira brindar mayor seguridad a tu cuenta</p>
+			</div>
+
+		</div>
+		<div class="both-buttons">
+			<input type="submit" class="button-inicial confirmacion-button" value="Confirmar" onclick="actualizarDatosTelefono()">
+			<button class="upload-image-button cancelar-edit" onclick="cambio('editarInformacion.html')">Cancelar</button>
+		</div>
+</div>
+
+	
+</body>
+</html>
