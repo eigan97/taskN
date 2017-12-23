@@ -156,7 +156,7 @@ function verDatos(){
 					'<div class="info-edit-option"><p class="info-edit-title">Correo</p><p>'+dato[i].correo+'</p></div>'+
 					'<p class="info-edit-red">></p></div><div class="option-edit-perfil" onclick="cambio(\'editarTelefono.html\')">'+
 					'<div class="info-edit-option"><p class="info-edit-title">Telefono</p><p>'+dato[i].telefono+'</p></div>'+
-					'<p class="info-edit-red">></p></div><div class="option-edit-perfil" onclick="cambio(\'editarContraseña.html\')">'+
+					'<p class="info-edit-red">></p></div><div class="option-edit-perfil" onclick="cambio(\'editarContrasena.html\')">'+
 					'<p>Cambiar Contraseña</p><p class="info-edit-red">></p></div><!-- ESPERARME!!!!!!!!! -->'+
 					'<div class="option-edit-perfil" onclick=""><p>Eliminar mi cuenta</p><p class="info-edit-red">></p></div>'
 			}
